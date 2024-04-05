@@ -65,10 +65,22 @@
         <auth-method>BASIC</auth-method>
         <realm-name>Example Realm</realm-name>
     </login-config>
-
+    <servlet>
+        <servlet-name>springMVC</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:spring-mvc.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springMVC</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
     <!-- 设置欢迎文件列表 -->
     <welcome-file-list>
-        <welcome-file>/views/index.jsp</welcome-file>
+        <welcome-file>/views/login.jsp</welcome-file>
     </welcome-file-list>
 
 </web-app>

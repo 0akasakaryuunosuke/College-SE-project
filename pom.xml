@@ -76,45 +76,45 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>4.1.7.RELEASE</version>
+            <version>6.1.3</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
-            <version>4.1.7.RELEASE</version>
+            <version>6.1.3</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>4.1.7.RELEASE</version>
+            <version>6.1.3</version>
         </dependency>
         <!-- 2)Spring DAO层 -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
-            <version>4.1.7.RELEASE</version>
+            <version>6.1.3</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
-            <version>4.1.7.RELEASE</version>
+            <version>6.1.3</version>
         </dependency>
         <!-- 3)Spring web -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <version>4.1.7.RELEASE</version>
+            <version>6.1.3</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>4.1.7.RELEASE</version>
+            <version>6.1.3</version>
         </dependency>
         <!-- 4)Spring test -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>4.1.7.RELEASE</version>
+            <version>6.1.3</version>
         </dependency>
 
         <!-- redis客户端:Jedis -->
@@ -140,12 +140,16 @@
             <artifactId>commons-collections</artifactId>
             <version>3.2</version>
         </dependency>
-
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
+        </dependency>
     </dependencies>
     <properties>
         <maven.compiler.source>22</maven.compiler.source>
         <maven.compiler.target>22</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <webappDirectory>views</webappDirectory>
     </properties>
-
 </project>
