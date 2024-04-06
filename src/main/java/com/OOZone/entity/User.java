@@ -1,4 +1,6 @@
 package com.OOZone.entity;
+import lombok.Data;
+
 import java.util.List;
 /**
  * 用户实体

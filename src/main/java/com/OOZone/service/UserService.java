@@ -8,4 +8,5 @@ import com.OOZone.entity.User;
  */
 public interface UserService {
     public User login(User user);
+    public User register(User user);
 }

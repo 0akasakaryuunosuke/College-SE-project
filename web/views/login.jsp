@@ -79,26 +79,44 @@
             color: #abc1ee;
         }
     </style>
+   <%-- <%
+        String username = "";
+        String password = "";
+        //获取当前站点的所有Cookie
+        Cookie[] cookies = request.getCookies();
+        for (Cookie cookie : cookies) {//对cookies中的数据进行遍历，找到用户名、密码的数据
+            if ("username".equals(cookie.getName())) {
+                username = cookie.getValue();
+            } else if ("password".equals(cookie.getName())) {
+                password = cookie.getValue();
+            }
+        }
+
+    %>--%>
+
 </head>
 <body>
 <div class="container">
     <div class="login-wrapper">
         <div class="header">Login</div>
-        <form id="adminlogin" action="${pageContext.request.contextPath}/user/login" method="post">
+        <form id="adminlogin" action="${pageContext.request.contextPath}/user/login.do" method="post">
             <div class="form-wrapper">
-                <label for="userName"></label><input type="text" value="${user.userName }" name="userName" id="userName" placeholder="username" class="input-item">
-                <label for="password"></label><input type="password" value="${user.password }" name="password" id="password" placeholder="password" class="input-item">
-                <button type="submit" class="btn" form="adminlogin">Login</button>
+                <label for="userName"></label><input type="text" value="${user.userName}" name="userName" id="userName"
+                                                     placeholder="username" class="input-item" required>
+                <label for="password"></label><input type="password" value="${user.password}" name="password"
+                                                     id="password" placeholder="password" class="input-item" required>
+                <a href="${pageContext.request.contextPath}/views/forgetpsw.jsp">忘记密码</a>
+               <span >${errorMsg}</span>
+                <button type="submit" class="btn" form="adminlogin">登录</button>
                 <%--<a href="#"><div class="btn">Login</div></a>--%>
             </div>
         </form>
         <div class="msg">
-            Don't have account?
-            <a href="${pageContext.request.contextPath}/views/register.jsp">Sign up</a>
+            还没有一个账号？
+            <a href="${pageContext.request.contextPath}/views/register.jsp">注册</a>
         </div>
     </div>
 </div>
 </body>
 </html>
-
 

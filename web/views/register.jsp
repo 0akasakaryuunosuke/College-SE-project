@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Register</title>
     <style>
         * {
             margin: 0;
@@ -49,6 +49,15 @@
             font-size: 15px;
             outline: none;
         }
+        .input{
+            display: block;
+            width: 50%;
+            margin-bottom: 10px;
+            border: 0;
+            padding: 5px;
+            border-bottom: 1px solid rgb(128,125,125);
+            font-size: 15px;
+        }
         /*未输入的时候保持USERNAME和PASSWORD的样式*/
         .input-item::placeholder {
             text-transform: uppercase;
@@ -76,20 +85,22 @@
 <body>
 <div class="container">
     <div class="login-wrapper">
-        <div class="header">Login</div>
-        <form id="adminlogin" action="${pageContext.request.contextPath}/user/login" method="post">
+        <div class="header">Register</div>
+        <form id="adminregister" action="register.do" method="post">
             <div class="form-wrapper">
-                <label for="userName"></label><input type="text" value="${user.userName }" name="userName" id="userName" placeholder="username" class="input-item">
-                <label for="password"></label><input type="password" value="${user.password }" name="password" id="password" placeholder="password" class="input-item">
-                <label for="roleName"></label><input type="text" value="${user.roleName }" name="roleName" id="roleName" placeholder="roleName" class="input-item">
-                <label for="phone"></label><input type="text" value="${user.phoneName }" name="phone" id="phone" placeholder="phone" class="input-item">
-                <button type="submit" class="btn" form="adminlogin">Login</button>
+                <label for="userName"></label><input type="text" value="${user.userName }" name="userName" id="userName" placeholder="username" class="input-item" required>
+                <label for="password"></label><input type="password" value="${user.password }" name="password" id="password" placeholder="password" class="input-item" required>
+                <label for="roleName"></label><input type="text" value="${user.roleName }" name="roleName" id="roleName" placeholder="roleName" class="input-item" required>
+                <label for="phone"></label><input type="text" value="${user.phoneName }" name="phone" id="phone" placeholder="phone" class="input" required>
+                <span >${errorMsg}</span>
+                <button type="submit" class="btn" form="adminregister">Register</button>
                 <%--<a href="#"><div class="btn">Login</div></a>--%>
             </div>
         </form>
+
         <div class="msg">
-            Don't have account?
-            <a href="${pageContext.request.contextPath}/views/register.jsp">Sign up</a>
+            我想起来我有账号！
+            <a href="${pageContext.request.contextPath}/views/login.jsp">登录</a>
         </div>
     </div>
 </div>

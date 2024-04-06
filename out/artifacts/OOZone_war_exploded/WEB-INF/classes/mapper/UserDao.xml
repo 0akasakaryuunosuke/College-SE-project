@@ -9,8 +9,11 @@
         <result property="roleName" column="roleName"/>
     </resultMap>
     <select id="login" parameterType="User" resultMap="UserResult">
-
         select * from
             users where userName=#{userName} and password=#{password} limit 1
     </select>
+    <select id="register" parameterType="User" resultMap="UserResult">
+        select * from
+            users where userName=#{userName} or roleName=#{roleName}  limit 1
+    </select>>
 </mapper>
