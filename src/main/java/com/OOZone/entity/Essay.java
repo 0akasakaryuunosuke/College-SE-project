@@ -1,11 +1,14 @@
 package com.OOZone.entity;
 
+import lombok.Data;
+
 import java.util.Date;
 import java.util.List;
 
 /**
  * 文章实体
  */
+@Data
 public class Essay {
     private Integer essayId;
 
